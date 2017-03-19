@@ -1,8 +1,11 @@
 var express = require('express');
+var cors = require('cors');
 
 // Create our app
 var app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(function (req, res, next) {
     if (req.headers['x-forwarded-proto'] === 'http') {
